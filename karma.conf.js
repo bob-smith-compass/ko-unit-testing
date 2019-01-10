@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Thu Jan 10 2019 14:29:17 GMT-0600 (Central Standard Time)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -15,10 +15,24 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      // 'lib/knockout.js',
+
+      'node_modules/requirejs/require.js',
+      'node_modules/karma-requirejs/lib/adapter.js',
+
       'test-main.js',
-      { pattern: 'lib/**/*.js', included: false },
-      { pattern: 'src/**/*.js', included: false },
-      { pattern: 'test/**/*Spec.js', included: false }
+      {
+        pattern: 'lib/**/*.js',
+        included: false
+      },
+      {
+        pattern: 'src/**/*.js',
+        included: false
+      },
+      {
+        pattern: 'test/**/*Spec.js',
+        included: false
+      }
     ],
 
 
@@ -30,8 +44,7 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
 
     // test results reporter to use
