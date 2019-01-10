@@ -1,0 +1,24 @@
+{
+  "name": "kokarma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start --log-level debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "npm": "^6.6.0-next.1",
+    "requirejs": "^2.3.6"
+  },
+  "devDependencies": {
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-requirejs": "^1.1.0"
+  }
+}
