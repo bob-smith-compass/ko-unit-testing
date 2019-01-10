@@ -19,3 +19,9 @@ RequireJS
 # Runnig
 
 `karma start my.conf.js --log-level debug --single-run`
+
+# Git 
+
+Tag your work at appropriate intervals/milestones
+
+`git tag -a v0.1 -m "karma jasmine requirejs working"`
