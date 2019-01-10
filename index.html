@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/knockout.js"></script>
     <title>Knockout Unit Testing RequireJS Style</title>
 </head>
+
 <body>
     <h3>Knockout Unit Testing RequireJS Style</h3>
-    
+
+    <p>First name: <input data-bind="value: firstName" /></p>
+    <p>Last name: <input data-bind="value: lastName" /></p>
+    <h2><span data-bind="text: fullName"> </span>!</h2>
+
+    <script>
+        // Here's my data model
+        var ViewModel = function (first, last) {
+            this.firstName = ko.observable(first);
+            this.lastName = ko.observable(last);
+
+            this.fullName = ko.pureComputed(function () {
+                // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+                return this.firstName() + " " + this.lastName();
+            }, this);
+        };
+
+        ko.applyBindings(new ViewModel("David", "Shams")); // This makes Knockout get to work
+    </script>
+
 </body>
+
 </html>
